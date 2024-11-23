@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Styling for container */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling for heading */
+h1 {
+  text-align: center;
+  color: green;
+}
+
+/* Styling for Boxes */
+.box {
+  border: 2px solid #333;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  height: 300px;
+}
+
+/* Styling for List Items */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
