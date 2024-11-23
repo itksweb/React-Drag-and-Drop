@@ -71,7 +71,7 @@ const Dragg = () => {
       <div className="container">
         <div
           className="box"
-          onDragOver={(e) => handleDragOver(e)}
+          onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => handleDrop(e, "box1")}
         >
           <h3>Box 1</h3>
