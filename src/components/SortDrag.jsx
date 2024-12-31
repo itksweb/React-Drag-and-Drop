@@ -10,14 +10,14 @@ const SortDrag = () => {
   useEffect(() => {
     if (dropIndex !== -1) {
       const draggedItem = sortedItems[dragIndex];
-      const newSortedItems = [...sortedItems];
-      newSortedItems.splice(dragIndex, 1);
-      newSortedItems.splice(dropIndex, 0, draggedItem);
-      setSortedItems(newSortedItems);
+      let newSortedItems = [...sortedItems]; // create a copy of the array
+      newSortedItems.splice(dragIndex, 1); // remove the dragged item
+      newSortedItems.splice(dropIndex, 0, draggedItem); // insert the dragged item at the new index
+      setSortedItems(newSortedItems); // update the state with the new sorted array
       setDragIndex(-1);
       setDropIndex(-1);
     }
-  }, [dropIndex]);
+  }, [dropIndex, dragIndex, sortedItems]);
 
   const handleDragStart = (e, index) => {
     setDragIndex(index);
@@ -46,7 +46,7 @@ const SortDrag = () => {
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => handleDrop(e, index)}
             onDragStart={(e) => handleDragStart(e, index)}
-            className="bg-gray-100 p-4 my-2 rounded-md shadow-md cursor-wait "
+            className="bg-gray-100 p-4 my-2 rounded-md shadow-md cursor-drag "
           >
             {item}
           </li>
